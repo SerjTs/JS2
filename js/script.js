@@ -72,7 +72,6 @@ Menu.prototype.remove = function(id_removeItem) {
 	for(let item in this.items) {
 		if(this.items[item] instanceof MenuItem){
 			// проверка на соответствие условия
-            console.log (this.items[item]);
             if(this.items[item].id != id_removeItem){
                 result += this.items[item].render();
             }
@@ -148,4 +147,8 @@ let menu = new Menu("my_menu", "menu_class", m_items);
 
 //document.write(menu.render());
 // Генерация меню с удалением элемента по id
-document.write(menu.remove("s_m_1")); //document.write(menu.remove(id_removeItem));
+document.write(menu.remove("m_2")); //document.write(menu.remove(id_removeItem));
+
+//let deletId = document.getElementById('s_m_2');
+//deletId.innerText = "текст";
+
