@@ -136,8 +136,8 @@ SubMenuItem.prototype.render = function() {
 };
 
 let sub_m_item1 = new SubMenuItem("s_m_1", "/catalogue/books", "Книги");
-let sub_m_item2 = new SubMenuItem("s_m_2", "/catalogue/catalogue/magazines", "Журналы");
-let sub_m_item3 = new SubMenuItem("s_m_3", "/gallery", "Newspapers");
+let sub_m_item2 = new SubMenuItem("s_m_2", "/catalogue/magazines", "Журналы");
+let sub_m_item3 = new SubMenuItem("s_m_3", "/catalogue/newspapers", "Газеты");
 //let sub_m_items = {0: sub_m_item1, 1: sub_m_item2, 2: sub_m_item3};
 
 // добавляем субменю в меню
