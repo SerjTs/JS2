@@ -31,7 +31,6 @@ Menu.prototype.render = function() {
 };
 
 
-
 function SubMenu(my_id, my_class, my_items) {
 	Container.call(this);
 	this.id = my_id;
@@ -62,14 +61,6 @@ Menu.prototype.render = function() {
         
 	};
 
-//// ********************************************************
-//    for(let item in this.items) {
-//		if(this.items[item] instanceof SubMenuItem){
-//			result += this.items[item].render();
-//		};
-//	};
-//// ********************************************************
-    
     result += '</ul>'
 	return result;
 };
@@ -85,8 +76,8 @@ Menu.prototype.remove = function(id_removeItem) {
             if(this.items[item].id != id_removeItem){
                 result += this.items[item].render();
             }
-//            result += this.items[item].render();
-		};
+
+        };
         
         // если обьект - подменю
         if(this.items[item] instanceof SubMenuItem){
@@ -150,14 +141,11 @@ let sub_m_item2 = new SubMenuItem("s_m_2", "/catalogue/catalogue/magazines", "Ж
 let sub_m_item3 = new SubMenuItem("s_m_3", "/gallery", "Newspapers");
 //let sub_m_items = {0: sub_m_item1, 1: sub_m_item2, 2: sub_m_item3};
 
-//let submenu = new SubMenu("my_sub_menu", "sub_menu_class", sub_m_items);
 // добавляем субменю в меню
 m_items = {0: m_item1, 1: m_item2, 2: m_item3, 3: sub_m_item1, 4: sub_m_item2, 5: sub_m_item3}; 
-
 let menu = new Menu("my_menu", "menu_class", m_items);
 
 
-//document.write(submenu.render());
 //document.write(menu.render());
-
+// Генерация меню с удалением элемента по id
 document.write(menu.remove("s_m_1")); //document.write(menu.remove(id_removeItem));
