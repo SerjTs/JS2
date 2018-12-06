@@ -108,7 +108,7 @@ function MenuItem(my_id, my_href, my_name) {
 MenuItem.prototype = Object.create(Container.prototype);
 MenuItem.prototype.constructor = MenuItem;
 MenuItem.prototype.render = function() {
-	return '<li class=' + this.className + '>' + this.name + '</li>';
+	return '<li id=' + this.id + ' class=' + this.className + '>' + this.name + '</li>';
 };
 
 let m_item1 = new MenuItem("m_1", "/", "Главная");
@@ -132,7 +132,7 @@ function SubMenuItem(my_id, my_href, my_name) {
 SubMenuItem.prototype = Object.create(Container.prototype);
 SubMenuItem.prototype.constructor = SubMenuItem;
 SubMenuItem.prototype.render = function() {
-	return '<li class=' + this.className + '>' + this.name + '</li>';
+	return '<li id=' + this.id + ' class=' + this.className + '>' + this.name + '</li>';
 };
 
 let sub_m_item1 = new SubMenuItem("s_m_1", "/catalogue/books", "Книги");
@@ -147,8 +147,8 @@ let menu = new Menu("my_menu", "menu_class", m_items);
 
 //document.write(menu.render());
 // Генерация меню с удалением элемента по id
-document.write(menu.remove("m_2")); //document.write(menu.remove(id_removeItem));
+document.write(menu.remove("s_m_2")); //document.write(menu.remove(id_removeItem));
 
 //let deletId = document.getElementById('s_m_2');
-//deletId.innerText = "текст";
+//deletId.innerText = "";
 
