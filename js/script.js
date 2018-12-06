@@ -145,10 +145,15 @@ m_items = {0: m_item1, 1: m_item2, 2: m_item3, 3: sub_m_item1, 4: sub_m_item2, 5
 let menu = new Menu("my_menu", "menu_class", m_items);
 
 
-//document.write(menu.render());
+document.write(menu.render());
 // Генерация меню с удалением элемента по id
-document.write(menu.remove("s_m_2")); //document.write(menu.remove(id_removeItem));
+//document.write(menu.remove("s_m_2")); //document.write(menu.remove(id_removeItem));
 
-//let deletId = document.getElementById('s_m_2');
-//deletId.innerText = "";
+function remove(id) {
+    let DelElem = document.getElementById(id);
+    DelElem.remove();
+}
 
+// удаление любого элемента по id без генерации страницы
+remove("m_2");
+remove("s_m_3");
