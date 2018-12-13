@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Урок 3. Домашняя работа.</title>
+</head>
+<body>
+    <div class="original_text">
+        <h3>Кавычки в английском языке</h3>
+        <p>В США точки и запятые также заключаются в кавычки, а в Великобритании, Канаде и островах, зависимых с точки зрения образования от Великобритании, пунктуация, связанная с использованием кавычек, чаще всего следуют законам логики. В американском стиле вы бы написали:</p>
+        <p>· <i>My favorite book is Edgar Poe's 'The Black Cat.'</i>(Моя любимая книга – «Черный кот» Эдгара По).</p>
+        <p>В британском это предложение было бы написано по-другому:</p>
+        <p>· <i>My favorite book is Edgar Poe's 'The Black Cat'.</i></p>
+        <p>В последнем примере точка ставится после кавычек, поскольку, следуя законам логики, мы должны ставить кавычки непосредственно вокруг цитируемых слов. Поэтому вы бы написали:</p>
+        <p>· <i>What do you think about Edgar Poe's 'The Black Cat'? </i>(Что вы думаете о «Черном коте» Эдгара По?)</p>
+        <p>· <i>I like 'The Black Cat'; however, my favorite book is Stephen King's 'The Green Mile'.</i>(Мне понравилась книга «Черный кот»; однако моя любимая – это «Зеленая миля» Стивена Кинга).</p>
+    </div>   
+    <div class="btn_block">
+        <input class="button" type="button" value="Задание 1" onclick="double_quotes_1()">
+        <input class="button" type="button" value="Задание 2" onclick="double_quotes_2()">
+    </div>
+    <div class="new_text">
+        <ol>
+            <li>
+                У вас есть большой текст, в котором для обозначения диалогов используются одинарные кавычки. Придумать шаблон, который меняет одинарные кавычки на двойные.
+            </li>
+            <li>
+                Улучшить шаблон таким образом, чтобы конструкции типа aren’t не меняли одинарную кавычку на двойную.
+            </li>
+        </ol>
+    </div>
+    <div class="form_container">
+        <h3>Задание 3</h3>
+        <div class="form_area">
+            <form class="form_1" action="#">
+                <h4>Валидация средствами html (свойство "pattern")</h4>
+                Ваше имя:<br>
+                <input type="text" size="30" placeholder="Иванов Иван Иванович" pattern="\D+"> <br><br>
+                Телефон: <br>
+                <input type="tel" size="30" placeholder="+7(000)000-0000" pattern="\+7\([0-9]{3}\)[0-9]{3}-[0-9]{4}"><br><br>
+                e-mail: <br>
+                <input class="email" type="email" size="30" placeholder="mymail@mail.ru"><br><br>
+                Сообщение: <br>
+                <textarea name="comment" cols="50" rows="10" placeholder="Текст сообщения"></textarea> <br>
+                <input class="button_submit" type="submit" value="Отправить">
+            </form>
+            <form class="form_2" action="#">
+                <h4>Валидация средствами javascript</h4>   
+                Ваше имя:<br>
+                <input id="input_full_name" type="text" size="30" placeholder="Иванов Иван Иванович"> 
+                <p id="text_full_name"> </p>
+                Телефон: <br>
+                <input id="input_phone" type="tel" size="30" placeholder="+7(000)000-0000"><br>
+                <p id="text_phone"> </p>
+                e-mail: <br>
+                <input id="input_email" class="email" type="email" size="30" placeholder="mymail@mail.ru"><br>
+                <p id="text_email"> </p>
+                Сообщение: <br>
+                <textarea name="comment" cols="50" rows="10" placeholder="Текст сообщения"></textarea> <br>
+                <input class="button_submit" type="submit" value="Отправить" onclick="form_2_Validation()">
+            </form>
+        </div>   
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
