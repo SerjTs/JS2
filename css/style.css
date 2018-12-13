@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h3 {
+    text-align: center;    
+}
+
+div {
+    width: 90%;    
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.original_text,
+.new_text,
+.form_container{
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 10px;
+}
+
+.form_container{
+    margin-top: 30px;
+}
+
+form {
+    padding-left: 20px;
+
+}
+.btn_block {
+    text-align: center;
+}
+
+.button {
+    margin: 20px;
+}
+
+.form_area {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,159 +1,50 @@
-function Container() {
-	this.id = "";
-	this.className = "";
-	this.htmlCode = "";
+    var original_text = document.getElementsByClassName("original_text")[0];
+
+function double_quotes_1() {
+    var new_text =  document.getElementsByClassName("new_text")[0];
+    new_text.innerHTML = original_text.innerHTML.replace(/'/g,'"');
 };
 
-Container.prototype.render = function() {
-	return this.htmlCode;
+function double_quotes_2() {
+    var new_text =  document.getElementsByClassName("new_text")[0];
+    new_text.innerHTML = original_text.innerHTML.replace(/\B'|'\B/g, '"');
 };
 
-function Menu(my_id, my_class, my_items) {
-	Container.call(this);
-	this.id = my_id;
-	this.className = my_class;
-	this.items = my_items;	
-};
+function form_2_Validation() {
 
-Menu.prototype = Object.create(Container.prototype);
-Menu.prototype.constructor = Menu;
-Menu.prototype.render = function() {
-	let result = '<ul class="' + this.className + '" id="' + this.id + '">';
+    var full_name_field, phone_field, email_field, text;
 
-	for(let item in this.items) {
-		if(this.items[item] instanceof MenuItem){
-			result += this.items[item].render();
-		};
-	};
+    full_name_field = document.getElementById("input_full_name").value;
+    if (/\D+/.test(full_name_field)) {
+        document.getElementById("input_full_name").style.borderColor = "green";
+        text = "";
+    } else {
+        document.getElementById("input_full_name").style.borderColor = "red";
+        text = "Поле заполнено неправильно";
+    }
+    document.getElementById("text_full_name").innerHTML = text;
+    
+    phone_field = document.getElementById("input_phone").value;
+    if (/\+7\(\d{3}\)\d{3}-\d{4}/.test(phone_field)) {
+        document.getElementById("input_phone").style.borderColor = "green";
+        text = "";
+    } else {
+        document.getElementById("input_phone").style.borderColor = "red";
+        text = "Поле заполнено неправильно";
+    }
+    document.getElementById("text_phone").innerHTML = text;
 
-	result += '</ul>'
-	return result;
-};
+    
+    email_field = document.getElementById("input_email").value;
+//        if (/\+7\(\d{3}\)\d{3}-\d{4}/.test(phone_field)) {
 
-
-function SubMenu(my_id, my_class, my_items) {
-	Container.call(this);
-	this.id = my_id;
-	this.className = my_class;
-	this.items = my_items;	
-};
-
-SubMenu.prototype = Object.create(Menu.prototype);
-SubMenu.prototype.constructor = SubMenu;
-
-
-Menu.prototype.render = function() {
-	let result = '<ul class="' + this.className + '" id="' + this.id + '">';
-
-	for(let item in this.items) {
-		if(this.items[item] instanceof MenuItem){
-			result += this.items[item].render();
-		};
-        
-        // если обьект - подменю
-        if(this.items[item] instanceof SubMenuItem){
-			result += '<ul class="' + this.className + '" id="' + this.id + '">';
-            
-            result += this.items[item].render();
-            result += '</ul>'; 
-		};
-        
-        
-	};
-
-    result += '</ul>'
-	return result;
-};
-
-// метод remove ищет dom элемент по id и удаляет его
-Menu.prototype.remove = function(id_removeItem) {
-	let result = '<ul class="' + this.className + '" id="' + this.id + '">';
-
-	for(let item in this.items) {
-		if(this.items[item] instanceof MenuItem){
-			// проверка на соответствие условия
-            if(this.items[item].id != id_removeItem){
-                result += this.items[item].render();
-            }
-
-        };
-        
-        // если обьект - подменю
-        if(this.items[item] instanceof SubMenuItem){
-			result += '<ul class="' + this.className + '" id="' + this.id + '">';
-            
-            if(this.items[item].id != id_removeItem){
-                result += this.items[item].render();
-            }
-                        
-            result += '</ul>'; 
-		};
-        
-        
-	};
-
-	result += '</ul>'
-	return result;
-};
-
-function MenuItem(my_id, my_href, my_name) {
-	Container.call(this);
-
-    this.id = my_id;
-    this.className = "menu-item";
-	this.href = my_href;
-	this.name = my_name;
-};
-
-MenuItem.prototype = Object.create(Container.prototype);
-MenuItem.prototype.constructor = MenuItem;
-MenuItem.prototype.render = function() {
-	return '<li id=' + this.id + ' class=' + this.className + '>' + this.name + '</li>';
-};
-
-let m_item1 = new MenuItem("m_1", "/", "Главная");
-let m_item2 = new MenuItem("m_2", "/catalogue", "Каталог");
-let m_item3 = new MenuItem("m_3", "/gallery", "Галерея");
-let m_items = {0: m_item1, 1: m_item2, 2: m_item3};
-
-//let menu = new Menu("my_menu", "menu_class", m_items);
-
-
-function SubMenuItem(my_id, my_href, my_name) {
-	Container.call(this);
-
-    this.id = my_id;
-    this.className = "submenu-item";
-	this.href = my_href;
-	this.name = my_name;
-};
-
-
-SubMenuItem.prototype = Object.create(Container.prototype);
-SubMenuItem.prototype.constructor = SubMenuItem;
-SubMenuItem.prototype.render = function() {
-	return '<li id=' + this.id + ' class=' + this.className + '>' + this.name + '</li>';
-};
-
-let sub_m_item1 = new SubMenuItem("s_m_1", "/catalogue/books", "Книги");
-let sub_m_item2 = new SubMenuItem("s_m_2", "/catalogue/magazines", "Журналы");
-let sub_m_item3 = new SubMenuItem("s_m_3", "/catalogue/newspapers", "Газеты");
-//let sub_m_items = {0: sub_m_item1, 1: sub_m_item2, 2: sub_m_item3};
-
-// добавляем субменю в меню
-m_items = {0: m_item1, 1: m_item2, 2: m_item3, 3: sub_m_item1, 4: sub_m_item2, 5: sub_m_item3}; 
-let menu = new Menu("my_menu", "menu_class", m_items);
-
-
-document.write(menu.render());
-// Генерация меню с удалением элемента по id
-//document.write(menu.remove("s_m_2")); //document.write(menu.remove(id_removeItem));
-
-function remove(id) {
-    let DelElem = document.getElementById(id);
-    DelElem.remove();
+    if (/[a-z0-9.-]+@+[a-z]+[.]+[a-z]+/ig.test(email_field)) {
+        document.getElementById("input_email").style.borderColor = "green";
+        text = "";
+    } else {
+        document.getElementById("input_email").style.borderColor = "red";
+        text = "Поле заполнено неправильно";
+    }
+    document.getElementById("text_email").innerHTML = text;
+    
 }
-
-// удаление любого элемента по id без генерации страницы
-remove("m_2");
-remove("s_m_3");
