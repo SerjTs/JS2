@@ -1,14 +1,29 @@
-    var original_text = document.getElementsByClassName("original_text")[0];
+/*
+(function($) {
+$(function() {
 
-function double_quotes_1() {
-    var new_text =  document.getElementsByClassName("new_text")[0];
-    new_text.innerHTML = original_text.innerHTML.replace(/'/g,'"');
-};
+  $('ul.tabs_header').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.tabs').find('div.tabs_content').removeClass('active').eq($(this).index()).addClass('active');
+  });
 
-function double_quotes_2() {
-    var new_text =  document.getElementsByClassName("new_text")[0];
-    new_text.innerHTML = original_text.innerHTML.replace(/\B'|'\B/g, '"');
-};
+});
+})(jQuery);
+*/
+
+(function($) {
+$(function() {
+
+  $('ul.nav-pills').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('nav-link active').siblings().removeClass('active')
+      .closest('div.tabs').find('div.tabs_content').removeClass('active').eq($(this).index()).addClass('active');
+  });
+
+});
+})(jQuery);
+
 
 function form_2_Validation() {
 
@@ -48,3 +63,14 @@ function form_2_Validation() {
     document.getElementById("text_email").innerHTML = text;
     
 }
+
+
+$(function(){
+    $.getJSON('cities.json', function(data) {
+                $.each(data, function(key, val) {
+//                    $('#cities').append('<option value="' + val.region + '">' + val.city + '</option>');
+                    $('#cities').append('<option value>' + val.region + " - "+ val.city + '</option>');
+
+                });
+    });
+});
