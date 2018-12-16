@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Урок 4. Домашняя работа</title>
+</head>
+<body>
+    
+    <div class="tabs bootstrap container">
+        <ul class="nav nav-pills">
+            <li class="nav-link active">Lorem</li>
+            <li class="nav-link">Quam</li>
+            <li class="nav-link">Incidunt</li>
+            <li class="nav-link">Quia ex</li>
+            <li class="nav-link">Distinctio</li>
+        </ul>
+        <div class="tabs_content active"><p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam recusandae, quis a vel? Veniam delectus dolorum similique, facere, minus, quo, dolorem laudantium earum ratione ab eum unde placeat modi consectetur?</p></div>
+        <div class="tabs_content"><p class="text">Similique dolore cupiditate soluta, numquam minima eius ipsam inventore quisquam nihil quidem atque voluptas ullam fuga enim dolorem a doloribus officiis est, facere vero repudiandae sit, doloremque corporis! Aperiam, delectus.</p></div>
+        <div class="tabs_content"><p class="text">Labore itaque perspiciatis aliquid accusamus sequi quas temporibus harum. Nostrum explicabo, impedit aspernatur fuga labore voluptates debitis dicta ea animi architecto dignissimos libero, provident maxime, repudiandae fugiat vel omnis rerum!</p></div>
+        <div class="tabs_content"><p class="text">Corrupti nulla suscipit, consequatur. Optio, suscipit, corporis. Voluptatum sit, excepturi, reiciendis sed libero beatae eius cum perspiciatis praesentium fugiat nulla recusandae non quidem nostrum esse incidunt facere saepe pariatur veniam.</p></div>
+        <div class="tabs_content"><p class="text">Quaerat error voluptatibus est, laboriosam assumenda non dolorum nobis eum molestiae! Iure doloribus distinctio, est quia porro tenetur amet, incidunt facilis animi expedita voluptate accusamus aspernatur, consequuntur ipsa officia voluptatibus.</p></div> 
+    </div>
+    <div class="vertical_main container">
+        <div class="tabs bootstrap vertical_main container">
+            <ul class="nav flex-column nav-pills">
+                <li class="nav-link active">Lorem</li>
+                <li class="nav-link">Quam</li>
+                <li class="nav-link">Incidunt</li>
+                <li class="nav-link">Quia ex</li>
+                <li class="nav-link">Distinctio</li>
+            </ul>
+            <div class="tabs_content active"><p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam recusandae, quis a vel? Veniam delectus dolorum similique, facere, minus, quo, dolorem laudantium earum ratione ab eum unde placeat modi consectetur?</p></div>
+            <div class="tabs_content"><p class="text">Similique dolore cupiditate soluta, numquam minima eius ipsam inventore quisquam nihil quidem atque voluptas ullam fuga enim dolorem a doloribus officiis est, facere vero repudiandae sit, doloremque corporis! Aperiam, delectus.</p></div>
+            <div class="tabs_content"><p class="text">Labore itaque perspiciatis aliquid accusamus sequi quas temporibus harum. Nostrum explicabo, impedit aspernatur fuga labore voluptates debitis dicta ea animi architecto dignissimos libero, provident maxime, repudiandae fugiat vel omnis rerum!</p></div>
+            <div class="tabs_content"><p class="text">Corrupti nulla suscipit, consequatur. Optio, suscipit, corporis. Voluptatum sit, excepturi, reiciendis sed libero beatae eius cum perspiciatis praesentium fugiat nulla recusandae non quidem nostrum esse incidunt facere saepe pariatur veniam.</p></div>
+            <div class="tabs_content"><p class="text">Quaerat error voluptatibus est, laboriosam assumenda non dolorum nobis eum molestiae! Iure doloribus distinctio, est quia porro tenetur amet, incidunt facilis animi expedita voluptate accusamus aspernatur, consequuntur ipsa officia voluptatibus.</p></div> 
+        </div>
+    </div>
+      
+    <div class="form_container">
+            <form class="form_2" action="#">
+                Ваше имя:<br>
+                <input id="input_full_name" type="text" size="30" placeholder="Иванов Иван Иванович"> 
+                <p class="check" id="text_full_name"></p>
+                Телефон: <br>
+                <input id="input_phone" type="tel" size="30" placeholder="+7(000)000-0000"><br>
+                <p class="check" id="text_phone"> </p>
+                e-mail: <br>
+                <input id="input_email" class="email" type="email" size="30" placeholder="mymail@mail.ru"><br>
+                <p class="check" id="text_email"> </p>
+                Город проживания: <br>
+                <select id="cities" >
+                    <option enabled>Выберите город</option>
+                </select><br>
+                Сообщение: <br>
+                <textarea name="comment" cols="59" rows="10" placeholder="Текст сообщения"></textarea> <br>
+                <input class="button_submit" type="submit" value="Отправить" onclick="form_2_Validation()">
+            </form>
+    </div>
+               
+                
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

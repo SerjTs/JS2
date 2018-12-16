@@ -1,0 +1,50 @@
+.tabs_content {
+    display: none;
+}
+
+.tabs_content.active,
+.form_container{
+    display: block;
+    border: 1px solid #007bff;
+    border-radius: .3rem;
+}
+
+.nav-link {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.active {
+    cursor: text;
+}
+
+.container {
+    margin: 10px;
+}
+
+.text {
+    padding: 10px;
+}
+
+.vertical_main {
+    display: flex;
+/*    flex-direction: column;*/
+}  
+
+.form_container {
+    margin: 0 auto;
+    width: 87%;
+    min-width: 464px;
+    padding: 10px;
+}
+
+.check {
+    margin-bottom: 0px;
+    font-style: italic;
+    font-size: 0.8em;
+}
+input,
+textarea {
+    padding: 0 5px;
+}
