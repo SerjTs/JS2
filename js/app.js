@@ -43,10 +43,18 @@ $(document).ready(() => {
         let author = $('#form-author').val();
         // получение содердимого поля комментарий
         let message = $('#form-message').val();
-        // размещение комментария на странице
-        $(".comments-list").append("<div class='comment'>Автор: <strong>"+author+"</strong><br>"+"Сообщение: "+message+"</div>");
-    } 
+        // если поле автора и комментарий заполнено
+        if(author > "" && message > "") {
+            // тогда размещение автора, даты и комментария на странице
+            $(".comments-list").append("<div class='comment'>Автор: <strong>"+author+"</strong> ("+$.date()+")<br>"+"Сообщение: "+message+"</div>");
+        }; 
+    }
     
+    // добавление даты
+    $.date = function() {
+    return new Date().toLocaleString();
+    };
+
     // функция которая синхронизирует кнопки
   function syncRemoveButtons() {
       // если участник 1, то мы прячем кнопку удалить, иначе показываем все кнопки
@@ -128,6 +136,6 @@ $(document).ready(() => {
   syncPurchaseButton();
     // добавляем форму комментариев
     addCommentsFields();
-    // судаляем лишнюю кнопку удалить
+    // убираем лишнюю кнопку удалить
     syncRemoveButtons();
 });
