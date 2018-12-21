@@ -1,0 +1,20 @@
+body {
+	margin: 10vh auto;
+    width: 95%;
+}
+
+.unit-price {
+	color: #999;
+}
+
+.comment {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: .3rem;
+}
+
+.blockquote {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
